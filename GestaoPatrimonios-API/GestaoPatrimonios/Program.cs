@@ -104,6 +104,10 @@ builder.Services.AddScoped<StatusTransferenciaService>();
 builder.Services.AddScoped<ITipoAlteracaoRepository, TipoAlteracaoRepository>();
 builder.Services.AddScoped<TipoAlteracaoService>();
 
+// TipoUsuario
+builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
+builder.Services.AddScoped<TipoUsuarioService>();
+
 // Patrimonio
 builder.Services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();
 builder.Services.AddScoped<PatrimonioService>();
