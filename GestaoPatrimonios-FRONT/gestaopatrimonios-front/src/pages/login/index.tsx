@@ -1,4 +1,33 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { login } from "../api/authService";
+import { toast } from "react-toastify";
+
 const listaLocais = () => {
+
+    const [nif, setNif] = useState<string>("");
+    const [senha, setSenha] = useState<string>("");
+
+    const router = useRouter();
+    const notificacao = (msg: string) => toast.error(msg);
+    const erro = (msg: string) => toast. error(msg);
+
+    async function autenticar (e: React.FormEvent<HTMLFormElement>){
+        e.preventDefault();
+        try {
+            await login(nif, senha);
+            notificacao("Login bem sucedido!")
+
+            setTimeout(() => {
+                router.push("/home");
+            }, 2000)
+        } catch (error: any) {
+            erro(error.message);
+        }
+    }
+
+
+
     return (
         <>
             <main className="login-page">
@@ -23,7 +52,7 @@ const listaLocais = () => {
                     </div>
                 </section>
                 <section className="login-area" aria-label="Formulário de login">
-                    <form className="login-form">
+                    <form className="login-form" onSubmit = {autenticar}>
                         <h1>Login</h1>
                         <div className="form-group">
                             <label htmlFor="nif">NIF:</label>
@@ -33,6 +62,7 @@ const listaLocais = () => {
                                 name="nif"
                                 placeholder="Insira o seu NIF"
                                 required
+                                value={nif} onChange={(e) => setNif(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
@@ -44,6 +74,7 @@ const listaLocais = () => {
                                     name="senha"
                                     placeholder="Insira a sua senha"
                                     required
+                                    value={senha} onChange={(e) => setSenha(e.target.value)}
                                 />
                                 <button
                                     type="button"
