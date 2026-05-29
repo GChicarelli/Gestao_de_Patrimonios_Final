@@ -1,0 +1,125 @@
+import Header from "@/components/header/header";
+import styles from "./home.module.css";
+
+const Home = () => {
+  return (
+    <>
+      <header className={styles.topbar}>
+        <nav className={`${styles.navbar} ${styles.layout_guide}`} aria-label="Menu principal">
+          <a href="#" className={styles.logo_link} aria-label="Página inicial">
+            <img src="../imgs/Logo Senai.png" alt="Logo SENAI" className={styles.logo} />
+          </a>
+          <ul className={styles.menu_list}>
+            <li>
+              <a href="#" className={styles.menu_link}>
+                Ambientes
+                <i className="fa-solid fa-chevron-down" />
+              </a>
+            </li>
+            <li>
+              <a href="#" className={styles.menu_link}>
+                Patrimônios
+              </a>
+            </li>
+          </ul>
+          <section className={styles.user_area} aria-label="Informações do usuário">
+            <button className={styles.user_icon} aria-label="Abrir perfil do usuário">
+              <i className="fa-solid fa-user" />
+            </button>
+            <div className={styles.user_info}>
+              <strong>Késsia Milena</strong>
+              <span>kessia@sp.senai.br</span>
+            </div>
+            <button className={styles.arrow_button} aria-label="Abrir opções da conta">
+              <i className="fa-solid fa-chevron-down" />
+            </button>
+          </section>
+          <button className={styles.hamburguer} aria-label="Abrir opções de menu ">
+            <i className="fa-solid fa-bars" />
+          </button>
+        </nav>
+      </header>
+
+      <main className={styles.page_content}>
+        <section
+          className={`${styles.page_header} ${styles.layout_guide}`}
+          aria-labelledby="titulo-ambientes"
+        >
+          <h1 id="titulo-ambientes">Ambientes</h1>
+          <form className={styles.search_area} role="search">
+            <label htmlFor="pesquisa-ambiente" className={styles.sr_only}>
+              Pesquisar ambiente
+            </label>
+            <input
+              type="search"
+              id="pesquisa-ambiente"
+              name="pesquisaAmbiente"
+              placeholder="Pesquise o ambiente"
+            />
+            <button
+              type="button"
+              className={styles.filter_button}
+              aria-label="Filtrar ambientes"
+            >
+              <i className="fa-solid fa-sliders" />
+            </button>
+          </form>
+        </section>
+
+        <section
+          className={`${styles.table_section} ${styles.layout_guide}`}
+          aria-label="Lista de ambientes"
+        >
+          <table className={styles.environment_table}>
+            <thead>
+              <tr>
+                <th>Local</th>
+                <th>Responsável</th>
+                <th>Detalhes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sala 30/31 (anfiteatro)</td>
+                <td>Samanta Melissa</td>
+                <td>
+                  <a href="#" aria-label="Ver detalhes da Sala 30/31">
+                    <i className="fa-solid fa-circle-info" />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <nav className={styles.pagination} aria-label="Paginação">
+          <button
+            type="button"
+            className={styles.pagination_button}
+            aria-label="Página anterior"
+          >
+            ‹
+          </button>
+          <a href="#" className={`${styles.pagination_link} ${styles.current}`} aria-current="page">
+            1
+          </a>
+          <a href="#" className={styles.pagination_link}>
+            2
+          </a>
+          <a href="#" className={styles.pagination_link}>
+            3
+          </a>
+          <button
+            type="button"
+            className={styles.pagination_button}
+            aria-label="Próxima página"
+          >
+            ›
+          </button>
+        </nav>
+      </main>
+    </>
+  )
+}
+
+export default Home;

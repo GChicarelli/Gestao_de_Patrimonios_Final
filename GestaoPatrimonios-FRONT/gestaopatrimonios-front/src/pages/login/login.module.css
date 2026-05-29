@@ -1,39 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family:  "Montserrat", sans-serif;
-}
 
 
-:root{
-    --tamanho-fonte-padrao: 16px;
-    --tamanho-fonte-titulo: 35px;
-    --tamanho-fonte-subtitulo:30px;
-
-
-    --cor-vermelha: #CE2C2C;
-}
-
-body {
-    background-color: #e9edf2;
-    color: #111111;
-}
-
-.login-page {
+.login_page {
     height: 100vh;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
 }
 
-.login-banner {
+.login_banner {
     position: relative;
     overflow: hidden;
     border-radius: 0 16px 16px 0;
 }
 
-.banner-image {
+.banner_image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -41,7 +20,7 @@ body {
     background-color: #7a1c1c;
 }
 
-.banner-content {
+.banner_content {
     position: absolute;
     left: 80px;
     top: 43%;
@@ -50,45 +29,45 @@ body {
     z-index: 1;
 }
 
-.banner-content-text {
+.banner_content-text {
     max-width: 310px;
     font-size: 25px;
     line-height: 1.15;
     font-weight: 400;
 }
 
-.senai-logo {
+.senai_logo {
     width: 300px;
     max-width: 100%;
     margin-bottom: 28px;
     display: block;
 }
 
-.banner-content h2 {
+.banner_content h2 {
     font-size: var( --tamanho-fonte-subtitulo);
     margin-bottom: 12px;
     font-weight: 700;
 }
 
-.banner-content p {
+.banner_content p {
     font-size: var( --tamanho-fonte-padrao);
     line-height: 1.15;
     font-weight: 400;
 }
 
-.login-area {
+.login_area {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
 }
 
-.login-form {
+.login_form {
     width: 100%;
     max-width: 520px;
 }
 
-.login-form h1 {
+.login_form h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: var( --tamanho-fonte-titulo);
@@ -96,18 +75,18 @@ body {
     color: var(--cor-vermelha) ;
 }
 
-.form-group {
+.form_group {
     margin-bottom: 50px;
 }
 
-.form-group label {
+.form_group label {
     display: block;
     font-size: var( --tamanho-fonte-padrao);
     margin-bottom: 12px;
     font-weight: 500;
 }
 
-.form-group input {
+.form_group input {
     width: 100%;
     height: 55px;
     border: none;
@@ -118,19 +97,21 @@ body {
     outline: none;
 }
 
-.form-group input::placeholder {
-    color: #777777;
+.form_group input::placeholder {
+    color: #8f8c8c;
 }
 
-.password-field {
+.password_field {
     position: relative;
+    color: #ffffff;
 }
 
-.password-field input {
+.password_field input {
     padding-right: 58px;
+    color: #000000;
 }
 
-.show-password {
+.show_password {
     position: absolute;
     right: 18px;
     top: 50%;
@@ -141,7 +122,7 @@ body {
     font-size: 22px;
 }
 
-.login-button {
+.login_button {
     width: 100%;
     height: 55px;
     border: none;
@@ -155,16 +136,22 @@ body {
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.login-button:hover {
+.login_button:hover {
     filter: brightness(0.95);
     transform: translateY(-2px);
 }
 
-.login-button:focus,
-.form-group input:focus,
-.show-password:focus {
+.login_button:focus,
+
+.show_password:focus {
     outline: 3px solid rgba(255, 0, 0, 0.35);
     outline-offset: 3px;
+
+    
+}
+
+.form_group input {
+    color: #000000;
 }
 
 @media (max-width: 900px) {
@@ -177,45 +164,45 @@ body {
         border-radius: 0;
     }
 
-    .banner-content {
+    .banner_content {
         left: 40px;
     }
 
-    .senai-logo {
+    .senai_logo {
         width: 260px;
     }
 
-    .banner-content h1 {
+    .banner_content h1 {
         font-size: 26px;
     }
 
-    .banner-content p {
+    .banner_content p {
         font-size: 20px;
     }
 
-    .login-form h2 {
+    .login_form h2 {
         margin-bottom: 50px;
     }
-    .banner-content-text{
+    .banner_content-text{
         display: none;
     }
 }
 
 @media (max-width: 500px) {
-    .login-area {
+    .login_area {
         padding: 30px 20px;
     }
 
-    .banner-content {
+    .banner_content {
         left: 24px;
     }
 
-    .form-group label {
+    .form_group label {
         font-size: 20px;
     }
 
-    .form-group input,
-    .login-button {
+    .form_group input,
+    .login_button {
         height: 60px;
         font-size: 16px;
     }

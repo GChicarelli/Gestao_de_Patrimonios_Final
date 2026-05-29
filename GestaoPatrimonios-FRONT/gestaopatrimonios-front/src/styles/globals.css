@@ -40,3 +40,27 @@ a {
     color-scheme: dark;
   }
 }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:  "Montserrat", sans-serif;
+}
+
+
+:root{
+    --tamanho-fonte-padrao: 16px;
+    --tamanho-fonte-titulo: 35px;
+    --tamanho-fonte-subtitulo:30px;
+
+
+    --cor-vermelha: #CE2C2C;
+}
+
+body {
+    background-color: #e9edf2;
+    color: #111111;
+}
